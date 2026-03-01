@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Work Coffee | Café Gamberro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="announcement-bar">
+        🔥 HOY: REPOSICIÓN DE NUESTRO CAFÉ MÁS GAMBERRO
+    </div>
+
+    <nav>
+        <div class="logo">DEEP WORK</div>
+        <div class="nav-links">
+            <a href="#">CAFÉS</a>
+            <a href="#">PACKS</a>
+            <a href="#">SUSCRIPCIÓN</a>
+        </div>
+        <div class="cart-icon" onclick="toggleCart()">
+            🛒 <span id="cart-count">0</span>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>CAFÉ DE ESPECIALIDAD</h1>
+            <p>Tostado con amor directo a tu taza. Descubre que el buen café es gamberro.</p>
+            <a href="#productos" class="btn-main">MUERDE EL CAFÉ AQUÍ 👀</a>
+        </div>
+    </header>
+
+    <section class="features">
+        <div class="feature-item">🌍 <span>SABORES DE TODO EL MUNDO</span></div>
+        <div class="feature-item">⚡ <span>ENVÍO EXPRESS 24-72h</span></div>
+        <div class="feature-item">☕ <span>+7 CAFÉS DIFERENTES</span></div>
+    </section>
+
+    <section id="productos" class="products">
+        <h2>NUESTROS BESTSELLERS</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-tag">TOP VENTAS</div>
+                <img src="https://via.placeholder.com/300" alt="Café Etiopía">
+                <h3>ETIOPÍA "EL REY"</h3>
+                <p>Notas a jazmín y melocotón. 100% Arábica.</p>
+                <span class="price">30,00€</span>
+                <button class="btn-buy" onclick="addToCart('etiopia', 'Etiopía El Rey', 30)">AÑADIR AL CARRO</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300" alt="Café Colombia">
+                <h3>COLOMBIA "EL SOCIO"</h3>
+                <p>Cuerpo sedoso y notas a chocolate amargo.</p>
+                <span class="price">30,00€</span>
+                <button class="btn-buy" onclick="addToCart('colombia', 'Colombia El Socio', 30)">AÑADIR AL CARRO</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://via.placeholder.com/300" alt="Pack Muestras">
+                <h3>CAJA DE MUESTRAS</h3>
+                <p>¿No sabes por cuál empezar? Pruébalos todos.</p>
+                <span class="price">25,00€</span>
+                <button class="btn-buy" onclick="addToCart('muestras', 'Caja de Muestras', 25)">AÑADIR AL CARRO</button>
+            </div>
+        </div>
+    </section>
+
+    <div id="cart-panel" class="cart-panel">
+        <div class="cart-header">
+            <h3>MI CESTA</h3>
+            <button onclick="toggleCart()">&times;</button>
+        </div>
+        <div id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="total">Total: <span id="cart-total">0.00</span>€</div>
+            <button id="checkout-btn" class="btn-checkout" onclick="processCheckout()">FINALIZAR COMPRA</button>
+        </div>
+    </div>
+
+    <script src="carrito.js"></script>
+</body>
+</html>
